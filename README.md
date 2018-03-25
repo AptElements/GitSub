@@ -10,6 +10,12 @@ $ git-watch -- 'git pull && make clean deploy'
 
 When a push to the repository is made, it will pull, build and then deploy your code.
 
+# Rationale
+
+There is no standard mechanism for broadcasting Git repository updates. All existing mechanisms, such as GitHub WebHooks, are proprietary.
+
+# Specification
+
 [WebSub is a W3C recommendation](https://www.w3.org/TR/websub/) that provides a "common mechanism for communication between publishers of any kind of Web content and their subscribers, based on HTTP web hooks". GitSub concerns itself with crossing WebSub and Git repositories.
 
 A GitSub-compatible Git repository requires:
@@ -35,7 +41,7 @@ A GitSub-compatible Git repository requires:
 </html>
 ```
 
-## Client-side access
+# Client-side access
 
 The specification does not concern with client-side event streams. Please see:
 - http://git.watch/
