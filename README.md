@@ -18,7 +18,7 @@ A GitSub-compatible Git repository requires:
 2. When an update is made to the repository:
    1. The topic's `updated` meta-tag's contents are changed.
    2. The "hub" [is notified](https://www.w3.org/TR/websub/#publishing).
-3. At least one `<link rel="git">` tag.
+3. `<link rel="git">` tags are optional.
 
 ## Example "topic" HTML page
 
