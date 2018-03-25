@@ -12,7 +12,7 @@ When a push to the repository is made, it will pull, build and then deploy your 
 
 # Rationale
 
-Mechanisms such as GitHub WebHooks are proprietary and cannot be interfaced with any standard tools. GitSub comes from a strong desire to receive updates from any Git hosting service, in a standardised way.
+Mechanisms such as GitHub WebHooks are proprietary and cannot be interfaced with standard tools. GitSub comes from a strong desire to receive updates from any Git hosting service, in a standardised, plug-and-play way.
 
 # Specification
 
