@@ -26,7 +26,7 @@ A GitSub-compatible Git repository requires:
    2. The "hub" [is notified](https://www.w3.org/TR/websub/#publishing).
 3. `<link rel="git">` tags are optional.
 
-## Example "topic" HTML page
+## Example topic HTML page
 
 ```html
 <html>
