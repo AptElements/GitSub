@@ -12,7 +12,7 @@ When a push to the repository is made, it will pull, build and then deploy your 
 
 # Rationale
 
-There is no standard mechanism for broadcasting Git repository updates. All existing mechanisms, such as GitHub WebHooks, are proprietary.
+There is no standard mechanism for broadcasting Git repository updates. All existing mechanisms, such as GitHub WebHooks, are proprietary. The author of the specification has a strong desire to be able to plug into any Git hosting service and receive updates without special set up.
 
 # Specification
 
