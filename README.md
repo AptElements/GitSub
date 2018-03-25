@@ -3,8 +3,8 @@
 Would it not be nice if you could just do this?
 
 ```shell
-$ git clone https://github.com/AptElements/websub4git
-$ cd websub4git
+$ git clone https://github.com/AptElements/gitsub
+$ cd gitsub
 $ git-watch -- 'git pull && make clean deploy'
 ```
 
