@@ -1,25 +1,24 @@
-# Git Watch protocol: unified approach to a reactive Git
+# GitSub: WebSub for Git
 
-We compose several components and protocols to achieve a reactive Git, where you can simply do the following:
+Would it not be nice if you could just do this?
 
-```
+```shell
+$ git clone https://github.com/AptElements/websub4git
+$ cd websub4git
 $ git-watch -- 'git pull && make clean deploy'
 ```
 
-... and when your Git repository updates, it will automatically get pulled and deployed.
+When a push to the repository is made, it will pull, build and then deploy your code.
 
-What you get is an unlimited ability to interface with your Git repository changes, regardless of which Git host you use.
+[WebSub is a W3C recommendation](https://www.w3.org/TR/websub/) that provides a "common mechanism for communication between publishers of any kind of Web content and their subscribers, based on HTTP web hooks". GitSub concerns itself with crossing WebSub and Git repositories.
 
-# Git Watch
-
-The key component is [WebSub, a W3-recommended standardised alternative to webhooks](https://www.w3.org/TR/websub/).
-
-The protocol has the following requirements:
-1. An HTML page ("topic") which describes the repository.
-2. That when an update is performed:
-  1. The `updated` `meta`-tag's `content` is changed.
-  2. The `hub` [is notified](https://www.w3.org/TR/websub/#publishing) that the "topic" has been updated.
-3. The HTML page optionally has `git` tags, for any clients interested in checking out via SSH for example.
+A GitSub-compatible Git repository requires:
+1. An HTML page ("topic") that describes this repository.
+   1. It meets the WebSub specification by having links that are `rel="self"`, `rel="hub"`.
+2. When an update is made to the repository:
+   1. The topic's `updated` meta-tag's contents are changed.
+   2. The "hub" [is notified](https://www.w3.org/TR/websub/#publishing).
+3. At least one `<link rel="git">` tag.
 
 ```html
 <html>
@@ -39,6 +38,8 @@ The protocol has the following requirements:
 WebSub can be turned into an event stream, for example with [websub-to-eventsource](https://github.com/scalawilliam/websub-to-eventsource). Client-side commands can be executed based on WebSub updates, for example with [websub-execute](https://github.com/ScalaWilliam/websub-execute).
 
 ## Retrofitting with GitHub
+
+(Out of scope?)
 
 A request will be made for GitHub to implement this protocol. While waiting, a Git Watch—GitHub bridge will be implemented.
 
@@ -71,4 +72,3 @@ Yes, you can, but with drawbacks:
 Yes, you can, but with drawbacks:
 1. Jenkins has its own lifecycle.
 2. Jenkins has to be set up and maintained like any service.
-
