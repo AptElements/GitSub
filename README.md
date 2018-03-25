@@ -12,7 +12,7 @@ When a push to the repository is made, it will pull, build and then deploy your 
 
 # Rationale
 
-There is no standard mechanism for broadcasting Git repository updates. All existing mechanisms, such as GitHub WebHooks, are proprietary. The author of the specification has a strong desire to be able to plug into any Git hosting service and receive updates without special set up.
+Mechanisms such as GitHub WebHooks are proprietary and cannot be interfaced with any standard tools. GitSub comes from a strong desire to receive updates from any Git hosting service, in a standardised way.
 
 # Specification
 
