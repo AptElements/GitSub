@@ -20,10 +20,12 @@ A GitSub-compatible Git repository requires:
    2. The "hub" [is notified](https://www.w3.org/TR/websub/#publishing).
 3. At least one `<link rel="git">` tag.
 
+## Example "topic" HTML page
+
 ```html
 <html>
   <head>
-    <title>Sample repository reference</title>
+    <title>...</title>
     <link rel="self" href="http://example.com/sample-repo-reference">
     <link rel="hub" href="http://example.com/websub-hub">
     <link rel="git" href="git@github.com:ScalaWilliam/git-watch.git"/>
@@ -35,15 +37,10 @@ A GitSub-compatible Git repository requires:
 
 ## Client-side access
 
-WebSub can be turned into an event stream, for example with [websub-to-eventsource](https://github.com/scalawilliam/websub-to-eventsource). Client-side commands can be executed based on WebSub updates, for example with [websub-execute](https://github.com/ScalaWilliam/websub-execute).
-
-## Retrofitting with GitHub
-
-(Out of scope?)
-
-A request will be made for GitHub to implement this protocol. While waiting, a Git Watch—GitHub bridge will be implemented.
-
-The bridge will provide a "Git topic" for each repository. GitHub can push to that topic if it wishes to do so.
+The specification does not concern with client-side event streams. Please see:
+- http://git.watch/
+- [websub-to-eventsource](https://github.com/scalawilliam/websub-to-eventsource)
+- [websub-execute](https://github.com/ScalaWilliam/websub-execute).
 
 # Alternatives
 
